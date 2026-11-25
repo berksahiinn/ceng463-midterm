@@ -1,0 +1,14 @@
+experiment,method,is_invalid,cv_macro_f1,cv_std,cv_std_over_draws,val_macro_f1,optimism_cv_minus_val
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.503228839619356,0.06976512131573961,0.05397603278012183,0.4837551215128011,0.019473718106555016
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6616096187019218,0.06065323726307369,0.04119466062655498,0.4837551215128011,0.17785449718912066
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.47398032444326,0.011544023177379764,0.00851685765399597,0.472044282417382,0.0019360420258779931
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5106271515948787,0.013087720090171956,0.006549405401457509,0.472044282417382,0.0385828691774967
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.0,0.6946827207223768,0.02612739185604518
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.0,0.6946827207223768,0.02591124416622914
+D2 target-encoded customerID,baseline: no ID column,False,0.7224878636472487,0.010858625995116849,,0.7067303173132444,0.01575754633400428
+D2 target-encoded customerID,TargetEncoder inside pipeline (cross-fitted),False,0.7222688435534763,0.01149935604247212,,0.7067303173132444,0.015538526240231887
+D2 target-encoded customerID,target encoding fitted on all training rows before CV [INVALID – demonstration only],True,1.0,0.0,,0.4234860883797054,0.5765139116202946
+"D3 imputation+scaling, LogisticRegression",preprocessing inside pipeline,False,0.7224878636472487,0.010858625995116849,,0.7067303173132444,0.01575754633400428
+"D3 imputation+scaling, LogisticRegression",preprocessing fitted on all training rows before CV [INVALID – demonstration only],True,0.7227996716295702,0.010939373624579422,,0.7067303173132444,0.016069354316325724
+"D3 imputation+scaling, k-NN (k=5)",preprocessing inside pipeline,False,0.7049385203427867,0.022792033911428436,,0.6934242755889097,0.011514244753876968
+"D3 imputation+scaling, k-NN (k=5)",preprocessing fitted on all training rows before CV [INVALID – demonstration only],True,0.705339820141372,0.02248346049661465,,0.6934242755889097,0.011915544552462243

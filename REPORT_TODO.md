@@ -38,8 +38,15 @@ questions to answer; it contains no answers. Tick `[x]` when the paragraph is wr
 - [ ] 6. **Requirements table:** the *reason* behind each Yes/No per model family; mention Categorical NB (Q2b)
 - [ ] 7. **Design decisions:** `SeniorCitizen` as categorical; `TotalCharges` kept (r = 0.9996); one-hot without `drop='first'`
 
-## Q1d — Leakage demo
-_(added when Q1d is written)_
+## Q1d — Leakage demo (report Sections 2/5)
+- [ ] 1. **Size of the effect:** valid vs INVALID on CV estimate and on validation score; optimism (CV − val) per experiment
+- [ ] 2. **Mechanism:** which information from the held-out folds reached training in each INVALID procedure
+- [ ] 3. **Pure noise, n = 200 vs 4,225:** why inflation is larger with few rows / many features (multiple comparisons, p ≫ n); what the honest score should be
+- [ ] 4. **Real features + noise:** why the effect is smaller; does "small here" make it acceptable?
+- [ ] 5. **Target-encoded `customerID`:** why INVALID CV is near-perfect but validation is not; how cross-fitted `TargetEncoder` prevents it; a realistic example
+- [ ] 6. **Scaling/imputation on all training rows:** report the (small) difference honestly; why small; why still a violation and when it could matter more
+- [ ] 7. **General lesson:** when a CV estimate is trustworthy ("every learned step inside the pipeline")
+- [ ] Make sure every INVALID result in the report is labelled "INVALID – demonstration only"
 
 ## Q1e — Audit table, protocol diagram, failure modes
 _(added when Q1e is written)_

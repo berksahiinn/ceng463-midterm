@@ -1,0 +1,19 @@
+\begin{tabular}{llrrrrrr}
+\toprule
+experiment & method & is\_invalid & cv\_macro\_f1 & cv\_std & cv\_std\_over\_draws & val\_macro\_f1 & optimism\_cv\_minus\_val \\
+\midrule
+D1a pure noise (200 cols, k=10), n\_train=200 & SelectKBest inside pipeline & False & 0.5032 & 0.0698 & 0.0540 & 0.4838 & 0.0195 \\
+D1a pure noise (200 cols, k=10), n\_train=200 & SelectKBest fitted on all training rows before CV [INVALID – demonstration only] & True & 0.6616 & 0.0607 & 0.0412 & 0.4838 & 0.1779 \\
+D1a pure noise (200 cols, k=10), n\_train=4225 & SelectKBest inside pipeline & False & 0.4740 & 0.0115 & 0.0085 & 0.4720 & 0.0019 \\
+D1a pure noise (200 cols, k=10), n\_train=4225 & SelectKBest fitted on all training rows before CV [INVALID – demonstration only] & True & 0.5106 & 0.0131 & 0.0065 & 0.4720 & 0.0386 \\
+D1b real (46) + noise (200) features, k=20 & SelectKBest inside pipeline & False & 0.7208 & 0.0079 & 0.0000 & 0.6947 & 0.0261 \\
+D1b real (46) + noise (200) features, k=20 & SelectKBest fitted on all training rows before CV [INVALID – demonstration only] & True & 0.7206 & 0.0080 & 0.0000 & 0.6947 & 0.0259 \\
+D2 target-encoded customerID & baseline: no ID column & False & 0.7225 & 0.0109 & NaN & 0.7067 & 0.0158 \\
+D2 target-encoded customerID & TargetEncoder inside pipeline (cross-fitted) & False & 0.7223 & 0.0115 & NaN & 0.7067 & 0.0155 \\
+D2 target-encoded customerID & target encoding fitted on all training rows before CV [INVALID – demonstration only] & True & 1.0000 & 0.0000 & NaN & 0.4235 & 0.5765 \\
+D3 imputation+scaling, LogisticRegression & preprocessing inside pipeline & False & 0.7225 & 0.0109 & NaN & 0.7067 & 0.0158 \\
+D3 imputation+scaling, LogisticRegression & preprocessing fitted on all training rows before CV [INVALID – demonstration only] & True & 0.7228 & 0.0109 & NaN & 0.7067 & 0.0161 \\
+D3 imputation+scaling, k-NN (k=5) & preprocessing inside pipeline & False & 0.7049 & 0.0228 & NaN & 0.6934 & 0.0115 \\
+D3 imputation+scaling, k-NN (k=5) & preprocessing fitted on all training rows before CV [INVALID – demonstration only] & True & 0.7053 & 0.0225 & NaN & 0.6934 & 0.0119 \\
+\bottomrule
+\end{tabular}

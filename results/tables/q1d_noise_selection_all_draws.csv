@@ -1,0 +1,61 @@
+experiment,method,is_invalid,cv_macro_f1,cv_std,val_macro_f1,optimism_cv_minus_val,noise_draw
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.4913803903581167,0.04101690317391904,0.48746693121693124,0.00391345914118546,0
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7006800779926231,0.07765282341116511,0.48746693121693124,0.21321314677569186,0
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.4832097073152939,0.013642688789214309,0.47727892186553605,0.005930785449757836,0
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5200102970581127,0.013736343022950476,0.47727892186553605,0.04273137519257669,0
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,0
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,0
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.49462584068694754,0.07393296943989353,0.48557867834976265,0.009047162337184889,1
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.683898580804241,0.08960408877189348,0.48557867834976265,0.1983199024544784,1
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.48592043857338824,0.005450543372431909,0.4754850422703636,0.010435396303024647,1
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5126482908030041,0.008128564521595182,0.4754850422703636,0.037163248532640525,1
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,1
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,1
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.467880110735946,0.05479904288551505,0.4959097071409475,-0.028029596405001522,2
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6149424161965508,0.05650930984744474,0.4959097071409475,0.11903270905560326,2
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.47123746040277525,0.011475502503010108,0.45821661797559715,0.013020842427178103,2
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5178398579488666,0.008334123075982207,0.45821661797559715,0.059623239973269404,2
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,2
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,2
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.5241771951470462,0.09298066199234088,0.4674279412988598,0.05674925384818641,3
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6740000254829407,0.04709687052499713,0.4674279412988598,0.2065720841840809,3
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.47765553975342606,0.02016470487103579,0.4763134025990803,0.0013421371543457794,3
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5131795118945419,0.014059322055253579,0.4763134025990803,0.036866109295461635,3
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,3
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,3
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.45795057150550644,0.0756629992046293,0.4857640700367024,-0.027813498531195968,4
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6448969953506838,0.05766325871726618,0.4857640700367024,0.15913292531398138,4
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.4708889654511005,0.008972684498604758,0.4713594577646133,-0.00047049231351281584,4
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5092637155538887,0.003513187200827834,0.4713594577646133,0.03790425778927542,4
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,4
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,4
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.4782417066068182,0.0755731669530026,0.4697532663716111,0.008488440235207118,5
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6022133745979289,0.06380067034956248,0.4697532663716111,0.13246010822631782,5
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.46660945793478276,0.014357842705853743,0.46203924028727184,0.004570217647510921,5
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5068601768524643,0.025337589543452103,0.46203924028727184,0.04482093656519248,5
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,5
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,5
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.52093012738717,0.03960261710786653,0.48325183374083125,0.03767829364633879,6
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7012644571265259,0.022096420042782117,0.48325183374083125,0.2180126233856946,6
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.4596355630168717,0.007623590652920082,0.46947077614868443,-0.009835213131812737,6
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5036457445717639,0.01622878426382714,0.46947077614868443,0.03417496842307949,6
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,6
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,6
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.5236490863064136,0.10020615806370663,0.5048591638606706,0.018789922445742957,7
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6341373686911445,0.06267700421878991,0.5048591638606706,0.1292782048304738,7
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.4701424736881754,0.014568798787583194,0.47240903758253605,-0.0022665638943606403,7
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.49855564464313007,0.012266388928417485,0.47240903758253605,0.026146607060594018,7
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,7
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,7
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.44011163858789926,0.057840182266944914,0.47755867186459666,-0.037447033276697406,8
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.6347259917123288,0.07538880835329435,0.47755867186459666,0.15716731984773213,8
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.4842611210684204,0.012015448070698457,0.472957970730005,0.01130315033841539,8
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.51532270404693,0.013303861008923031,0.472957970730005,0.04236473331692503,8
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,8
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,8
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest inside pipeline,False,0.6333417288716975,0.08603651206957762,0.47998095124709805,0.15336077762459943,9
+"D1a pure noise (200 cols, k=10), n_train=200",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7253368990642504,0.054043118393541444,0.47998095124709805,0.2453559478171523,9
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest inside pipeline,False,0.4702425172283656,0.007168427522445289,0.48491235695013213,-0.014669839721766553,9
+"D1a pure noise (200 cols, k=10), n_train=4225",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.5089455725760844,0.015969037280490525,0.48491235695013213,0.024033215625952287,9
+"D1b real (46) + noise (200) features, k=20",SelectKBest inside pipeline,False,0.720810112578422,0.007909068771179558,0.6946827207223768,0.02612739185604518,9
+"D1b real (46) + noise (200) features, k=20",SelectKBest fitted on all training rows before CV [INVALID – demonstration only],True,0.7205939648886059,0.007975769905213974,0.6946827207223768,0.02591124416622914,9
