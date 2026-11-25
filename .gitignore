@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+results/models/*.joblib
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
+*.zip
+data/sklearn_cache/
