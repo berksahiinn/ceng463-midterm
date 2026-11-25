@@ -8,3 +8,4 @@ Permitted scope (per exam rules): code writing, debugging, environment setup onl
 | 2026-11-25 | Project setup | Created folder structure, CLAUDE.md, .gitignore, LLM usage log; set up Python virtual environment and installed packages. |
 | 2026-11-25 | Environment | Created Python 3.12 venv, installed numpy/pandas/scikit-learn/imbalanced-learn/matplotlib/seaborn/jupyter; registered Jupyter kernel; generated requirements.txt (pip freeze) and environment.txt. |
 | 2026-11-25 | Data download | Wrote src/download_data.py (Telco via kagglehub, California Housing via sklearn) and ran it. |
+| 2026-11-25 | Tooling | Installed GitHub CLI and MiKTeX (local LaTeX), LaTeX Workshop VS Code extension; wrote .vscode/settings.json (venv interpreter, pdflatex recipe). |
