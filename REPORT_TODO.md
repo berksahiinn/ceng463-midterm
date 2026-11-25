@@ -29,8 +29,14 @@ questions to answer; it contains no answers. Tick `[x]` when the paragraph is wr
 - [ ] 5. When stratification fails / is not enough: very rare classes, grouped data (`GroupKFold`), time series (`TimeSeriesSplit`), regression (binned target), multi-label
 - [ ] 6. Why the class ratio of the test part is not "looking at the test set"
 
-## Q1c — Preprocessing
-_(added when Q1c is written)_
+## Q1c — Preprocessing (report Section 2)
+- [ ] 1. **Pipeline:** each step (median imputation → standardisation; most-frequent imputation → one-hot `handle_unknown='ignore'`) and why it is there
+- [ ] 2. **Fit on train only:** what the learned-statistics table proves; why scaled validation mean/std are close to but not exactly 0/1, and why that is correct
+- [ ] 3. **Missing `TotalCharges`:** value given to the 11 rows; is the train median sensible for `tenure = 0`? one alternative (0, `tenure × MonthlyCharges`) and its trade-off
+- [ ] 4. **Unseen categories:** what `handle_unknown='ignore'` does; why safer than an error; what information is lost
+- [ ] 5. **Scaling sensitivity:** which models change, by how much, and why (distance, regularisation/solver iterations, threshold splits, per-feature Gaussian)
+- [ ] 6. **Requirements table:** the *reason* behind each Yes/No per model family; mention Categorical NB (Q2b)
+- [ ] 7. **Design decisions:** `SeniorCitizen` as categorical; `TotalCharges` kept (r = 0.9996); one-hot without `drop='first'`
 
 ## Q1d — Leakage demo
 _(added when Q1d is written)_

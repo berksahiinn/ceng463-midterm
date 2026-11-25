@@ -1,0 +1,8 @@
+model,accepts_raw_strings,accepts_NaN,encoding_required,imputation_required,macro_f1_scaled_minus_unscaled
+LogisticRegression,no (ValueError),no (ValueError),Yes,Yes,0.0014951417490651764
+k-NN (k=5),no (ValueError),no (ValueError),Yes,Yes,0.027224619979955844
+GaussianNB,no (ValueError),no (ValueError),Yes,Yes,-0.0002938389533038155
+DecisionTree,no (ValueError),yes,Yes,No (native NaN support),-8.622144078151983e-06
+RandomForest,no (ValueError),yes,Yes,No (native NaN support),0.000649220279019147
+AdaBoost,no (ValueError),no (ValueError),Yes,Yes,0.0
+GradientBoosting,no (ValueError),no (ValueError),Yes,Yes,0.0

@@ -1,0 +1,13 @@
+\begin{tabular}{lllllr}
+\toprule
+model & accepts\_raw\_strings & accepts\_NaN & encoding\_required & imputation\_required & macro\_f1\_scaled\_minus\_unscaled \\
+\midrule
+LogisticRegression & no (ValueError) & no (ValueError) & Yes & Yes & 0.0015 \\
+k-NN (k=5) & no (ValueError) & no (ValueError) & Yes & Yes & 0.0272 \\
+GaussianNB & no (ValueError) & no (ValueError) & Yes & Yes & -0.0003 \\
+DecisionTree & no (ValueError) & yes & Yes & No (native NaN support) & -0.0000 \\
+RandomForest & no (ValueError) & yes & Yes & No (native NaN support) & 0.0006 \\
+AdaBoost & no (ValueError) & no (ValueError) & Yes & Yes & 0.0000 \\
+GradientBoosting & no (ValueError) & no (ValueError) & Yes & Yes & 0.0000 \\
+\bottomrule
+\end{tabular}
