@@ -1,0 +1,14 @@
+\begin{tabular}{lr}
+\toprule
+check & count \\
+\midrule
+identical rows incl. customerID (extra copies) & 0 \\
+duplicated customerID values & 0 \\
+identical rows excl. customerID, features+target (extra copies) & 22 \\
+identical rows excl. customerID, features only (extra copies) & 40 \\
+rows belonging to a feature-duplicate group & 73 \\
+feature-duplicate groups & 33 \\
+groups with conflicting Churn labels & 18 \\
+groups spread over more than one split & 21 \\
+\bottomrule
+\end{tabular}

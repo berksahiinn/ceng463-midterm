@@ -1,0 +1,22 @@
+column,raw_dtype,role,n_unique
+customerID,str,ID (not a feature),7043
+gender,str,categorical,2
+SeniorCitizen,int64,categorical,2
+Partner,str,categorical,2
+Dependents,str,categorical,2
+tenure,int64,numeric,73
+PhoneService,str,categorical,2
+MultipleLines,str,categorical,3
+InternetService,str,categorical,3
+OnlineSecurity,str,categorical,3
+OnlineBackup,str,categorical,3
+DeviceProtection,str,categorical,3
+TechSupport,str,categorical,3
+StreamingTV,str,categorical,3
+StreamingMovies,str,categorical,3
+Contract,str,categorical,3
+PaperlessBilling,str,categorical,2
+PaymentMethod,str,categorical,4
+MonthlyCharges,float64,numeric,1585
+TotalCharges,str,numeric,6531
+Churn,str,target,2

@@ -1,0 +1,8 @@
+feature,level,determined_by,rows_with_level,rows_with_condition,identical_rows
+OnlineSecurity,No internet service,InternetService == No,1526,1526,True
+OnlineBackup,No internet service,InternetService == No,1526,1526,True
+DeviceProtection,No internet service,InternetService == No,1526,1526,True
+TechSupport,No internet service,InternetService == No,1526,1526,True
+StreamingTV,No internet service,InternetService == No,1526,1526,True
+StreamingMovies,No internet service,InternetService == No,1526,1526,True
+MultipleLines,No phone service,PhoneService == No,682,682,True

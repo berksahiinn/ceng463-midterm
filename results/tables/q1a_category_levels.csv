@@ -1,0 +1,44 @@
+feature,level,count,fraction,rare_lt_5pct
+gender,Male,3555,0.504756495811444,False
+gender,Female,3488,0.495243504188556,False
+SeniorCitizen,No,5901,0.8378531875621185,False
+SeniorCitizen,Yes,1142,0.1621468124378816,False
+Partner,No,3641,0.5169672014766434,False
+Partner,Yes,3402,0.4830327985233565,False
+Dependents,No,4933,0.7004117563538265,False
+Dependents,Yes,2110,0.2995882436461735,False
+PhoneService,Yes,6361,0.9031662643759761,False
+PhoneService,No,682,0.09683373562402385,False
+MultipleLines,No,3390,0.48132897912821243,False
+MultipleLines,Yes,2971,0.42183728524776376,False
+MultipleLines,No phone service,682,0.09683373562402385,False
+InternetService,Fiber optic,3096,0.4395854039471816,False
+InternetService,DSL,2421,0.34374556297032516,False
+InternetService,No,1526,0.21666903308249325,False
+OnlineSecurity,No,3498,0.4966633536845094,False
+OnlineSecurity,Yes,2019,0.2866676132329973,False
+OnlineSecurity,No internet service,1526,0.21666903308249325,False
+OnlineBackup,No,3088,0.43844952435041884,False
+OnlineBackup,Yes,2429,0.3448814425670879,False
+OnlineBackup,No internet service,1526,0.21666903308249325,False
+DeviceProtection,No,3095,0.43944341899758627,False
+DeviceProtection,Yes,2422,0.3438875479199205,False
+DeviceProtection,No internet service,1526,0.21666903308249325,False
+TechSupport,No,3473,0.4931137299446259,False
+TechSupport,Yes,2044,0.2902172369728809,False
+TechSupport,No internet service,1526,0.21666903308249325,False
+StreamingTV,No,2810,0.3989777083629135,False
+StreamingTV,Yes,2707,0.38435325855459324,False
+StreamingTV,No internet service,1526,0.21666903308249325,False
+StreamingMovies,No,2785,0.39542808462303,False
+StreamingMovies,Yes,2732,0.3879028822944768,False
+StreamingMovies,No internet service,1526,0.21666903308249325,False
+Contract,Month-to-month,3875,0.5501916796819537,False
+Contract,Two year,1695,0.24066448956410622,False
+Contract,One year,1473,0.20914383075394008,False
+PaperlessBilling,Yes,4171,0.5922192247621753,False
+PaperlessBilling,No,2872,0.4077807752378248,False
+PaymentMethod,Electronic check,2365,0.3357944057929859,False
+PaymentMethod,Mailed check,1612,0.22887973874769274,False
+PaymentMethod,Bank transfer (automatic),1544,0.21922476217520942,False
+PaymentMethod,Credit card (automatic),1522,0.2161010932841119,False
