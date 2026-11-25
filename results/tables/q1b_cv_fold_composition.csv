@@ -1,0 +1,5 @@
+n,method,fold_size,fold_rate_std,min_pos_in_fold,share_folds_zero_pos
+30,KFold,6.0,0.18068498479507664,0,0.155
+30,StratifiedKFold,6.0,0.1049491299412767,0,0.014
+4225,KFold,845.0,0.013568007103909733,184,0.0
+4225,StratifiedKFold,845.0,0.0004736096451184792,224,0.0
