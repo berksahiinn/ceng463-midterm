@@ -1,0 +1,27 @@
+\begin{tabular}{lllrrrll}
+\toprule
+column & role & raw\_dtype & missing\_n & missing\_pct & n\_unique & range\_or\_most\_frequent & note \\
+\midrule
+customerID & ID (not a feature) & str & 0 & 0.00 & 7043 & 7590-VHVEG (0.0\%) & unique per row (identifier); excluded from the features \\
+gender & categorical & str & 0 & 0.00 & 2 & Male (50.5\%) &  \\
+SeniorCitizen & categorical & int64 & 0 & 0.00 & 2 & 0 (83.8\%) & stored as 0/1; treated as categorical \\
+Partner & categorical & str & 0 & 0.00 & 2 & No (51.7\%) &  \\
+Dependents & categorical & str & 0 & 0.00 & 2 & No (70.0\%) &  \\
+tenure & numeric & int64 & 0 & 0.00 & 73 & 0 to 72 & 11 rows with tenure = 0 \\
+PhoneService & categorical & str & 0 & 0.00 & 2 & Yes (90.3\%) &  \\
+MultipleLines & categorical & str & 0 & 0.00 & 3 & No (48.1\%) & level 'No phone service' fully determined by PhoneService = No \\
+InternetService & categorical & str & 0 & 0.00 & 3 & Fiber optic (44.0\%) &  \\
+OnlineSecurity & categorical & str & 0 & 0.00 & 3 & No (49.7\%) & level 'No internet service' fully determined by InternetService = No \\
+OnlineBackup & categorical & str & 0 & 0.00 & 3 & No (43.8\%) & level 'No internet service' fully determined by InternetService = No \\
+DeviceProtection & categorical & str & 0 & 0.00 & 3 & No (43.9\%) & level 'No internet service' fully determined by InternetService = No \\
+TechSupport & categorical & str & 0 & 0.00 & 3 & No (49.3\%) & level 'No internet service' fully determined by InternetService = No \\
+StreamingTV & categorical & str & 0 & 0.00 & 3 & No (39.9\%) & level 'No internet service' fully determined by InternetService = No \\
+StreamingMovies & categorical & str & 0 & 0.00 & 3 & No (39.5\%) & level 'No internet service' fully determined by InternetService = No \\
+Contract & categorical & str & 0 & 0.00 & 3 & Month-to-month (55.0\%) &  \\
+PaperlessBilling & categorical & str & 0 & 0.00 & 2 & Yes (59.2\%) &  \\
+PaymentMethod & categorical & str & 0 & 0.00 & 4 & Electronic check (33.6\%) &  \\
+MonthlyCharges & numeric & float64 & 0 & 0.00 & 1585 & 18.25 to 118.75 &  \\
+TotalCharges & numeric & str & 11 & 0.16 & 6530 & 18.8 to 8684.8 & stored as text; 11 blank strings (all with tenure = 0) -> NaN; Pearson r = 0.9996 with tenure x MonthlyCharges \\
+Churn & target & str & 0 & 0.00 & 2 & No (73.5\%) & imbalanced: 26.5\% Yes \\
+\bottomrule
+\end{tabular}

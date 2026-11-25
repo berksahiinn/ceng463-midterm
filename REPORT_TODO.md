@@ -9,7 +9,8 @@ questions to answer; it contains no answers. Tick `[x]` when the paragraph is wr
 - [ ] Section 4: describe the validation scheme in your own words (60/20/20, 5-fold StratifiedKFold on train, Macro-F1, seed 463, test used once)
 - [ ] Section 8: LLM Usage Disclosure (tool, purpose, example prompts; source: `LLM_USAGE_LOG.md`)
 - [ ] Remove `\nocite{*}` once all references are cited in the text
-- [ ] Insert Q1 tables/figures into `main.tex` (planned: after Q1e, in one batch)
+- [x] Insert Q1 tables/figures into `main.tex` (done 2026-11-25; each has a `% TODO (you)` marker for your text)
+- [ ] Final formatting pass: wide tables (resizebox), drop tables you do not discuss, fix `customerID` "most frequent" cell in the audit table
 
 ## Q1a — Data audit (notebook `01_Q1_data_leakage.ipynb`, report Section 2)
 - [ ] 1. **Imbalance:** exact class ratio; what it implies for metrics (accuracy of the majority-class baseline)
@@ -48,8 +49,11 @@ questions to answer; it contains no answers. Tick `[x]` when the paragraph is wr
 - [ ] 7. **General lesson:** when a CV estimate is trustworthy ("every learned step inside the pipeline")
 - [ ] Make sure every INVALID result in the report is labelled "INVALID – demonstration only"
 
-## Q1e — Audit table, protocol diagram, failure modes
-_(added when Q1e is written)_
+## Q1e — Audit table, protocol diagram, failure modes (report Sections 2/3/6)
+- [ ] 1. **Audit table** (`q1e_dataset_audit`): comment on each column with a note; which findings changed a design decision and which did not
+- [ ] 2. **Protocol diagram** (Figure `fig:protocol`): walk the reader through it; at which stage each of Q1–Q5 happens
+- [ ] 3. **≥ 3 failure modes** that could invalidate results although the code runs — for each: what goes wrong, how it biases results, how it is detected/prevented here (cite evidence: `q1e_duplicates_across_splits`, Q1d, fingerprint, test-set protocol …). Candidate topics are listed in the notebook's Q1e "Points for you" cell
+- [ ] Check the protocol diagram renders well in the PDF (Section 3)
 
 ## Q2 – Q5
 _(added as each question is completed)_

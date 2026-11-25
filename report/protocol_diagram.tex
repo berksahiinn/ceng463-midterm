@@ -1,0 +1,52 @@
+% Experimental protocol diagram (Q1e). Included in main.tex with \input{protocol_diagram}.
+% Requires: tikz with libraries arrows.meta (loaded in main.tex).
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, text width=#1},
+    box/.default=40mm,
+    split/.style={box=28mm, fill=blue!8},
+    locked/.style={box=28mm, fill=red!12, draw=red!70!black, thick},
+    arr/.style={-{Stealth[length=2.2mm]}, thick},
+  ]
+  % --- data and split
+  \node[box=46mm, fill=gray!12] (raw)   at (0, 0)    {IBM Telco Customer Churn\\7{,}043 customers, 19 features};
+  \node[box=58mm]               (split) at (0, -1.6) {Stratified 60/20/20 split on \texttt{Churn}\\seed 463, indices saved once (notebook 00)};
+
+  \node[split]  (train) at (-5.2, -3.4) {\textbf{Train}\\4{,}225 rows};
+  \node[split]  (val)   at ( 0.0, -3.4) {\textbf{Validation}\\1{,}409 rows};
+  \node[locked] (test)  at ( 5.2, -3.4) {\textbf{Test}\\1{,}409 rows\\locked};
+
+  % --- training side
+  \node[box=46mm] (cv) at (-5.2, -5.9)
+    {5-fold \texttt{StratifiedKFold} (seed 463)\\\texttt{GridSearchCV}, metric Macro-F1\\[2pt]
+     \footnotesize Pipeline re-fitted in every fold:\\\footnotesize impute $\rightarrow$ scale $\rightarrow$ one-hot $\rightarrow$ model};
+  \node[box=40mm] (refit) at (-5.2, -8.4) {Best configuration per model\\re-fitted on the full train split};
+
+  % --- validation side
+  \node[box=46mm] (compare) at (0, -8.4)
+    {Model comparison on validation\\error analysis, robustness,\\paired bootstrap (Q2--Q5)};
+  \node[box=46mm, fill=yellow!15] (freeze) at (0, -10.7)
+    {Freeze configurations + selection rule\\\texttt{frozen\_configs.json}, models saved};
+
+  % --- final test
+  \node[locked] (final) at (5.2, -10.7) {Single evaluation\\on test (Q5e)};
+
+  % --- arrows
+  \draw[arr] (raw) -- (split);
+  \draw[arr] (split) -- (train);
+  \draw[arr] (split) -- (val);
+  \draw[arr] (split) -- (test);
+  \draw[arr] (train) -- (cv);
+  \draw[arr] (cv) -- (refit);
+  \draw[arr] (refit) -- (compare);
+  \draw[arr] (val) -- (compare);
+  \draw[arr] (compare) -- (freeze);
+  \draw[arr] (freeze) -- (final);
+  \draw[arr, dashed, red!70!black] (test) -- node[right, font=\footnotesize, align=left] {not used\\before Q5e} (final);
+\end{tikzpicture}
+\caption{Experimental protocol for the classification task. All learned preprocessing is fitted inside the
+cross-validation folds of the training split; the validation split is used for comparisons and analyses;
+the test split is opened only once, after configurations and the selection rule are frozen.}
+\label{fig:protocol}
+\end{figure}

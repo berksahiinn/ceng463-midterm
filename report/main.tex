@@ -48,15 +48,109 @@
 \section{Data audit, preprocessing and leakage controls}
 \label{sec:audit}
 % Q1a, Q1c, Q1d, Q1e.
-% TODO (you): audit findings, preprocessing choices, leakage results.
 
-% Example of including a saved table:
-% \begin{table}[H]
-%   \centering
-%   \caption{Dataset audit (Telco).}
-%   \label{tab:audit}
-%   \tablefile{telco_audit}
-% \end{table}
+\subsection{Data audit (Q1a, Q1e)}
+% TODO (you): domain, target, feature types, sample count; audit findings (REPORT_TODO Q1a 1-7, Q1e 1).
+% State the protocol: descriptive checks on the full data, target-related analysis on train only.
+
+\begin{table}[H]
+  \centering
+  \caption{Dataset audit of the raw Telco Customer Churn data (7{,}043 rows, 21 columns).
+           Notes are factual findings from the audit.}
+  \label{tab:q1e_audit}
+  \resizebox{\linewidth}{!}{\tablefile{q1e_dataset_audit}}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.40\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{q1a_class_distribution}
+    \caption{Class distribution (full data).}
+    \label{fig:q1a_class}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.46\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{q1a_totalcharges_scatter}
+    \caption{\texttt{TotalCharges} vs.\ \texttt{tenure}\,$\times$\,\texttt{MonthlyCharges}.}
+    \label{fig:q1a_scatter}
+  \end{subfigure}
+  \caption{Class imbalance and redundancy of \texttt{TotalCharges}.}
+  \label{fig:q1a_class_scatter}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Rows with a blank \texttt{TotalCharges} value in the raw CSV and the split they belong to.}
+  \label{tab:q1a_blank}
+  \small\tablefile{q1a_blank_totalcharges}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Duplicate checks with and without \texttt{customerID}.}
+  \label{tab:q1a_duplicates}
+  \small\tablefile{q1a_duplicates}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Category levels that are fully determined by another column.}
+  \label{tab:q1a_dependent}
+  \resizebox{\linewidth}{!}{\tablefile{q1a_dependent_categories}}
+\end{table}
+% TODO (you): interpret Tables~\ref{tab:q1e_audit}--\ref{tab:q1a_dependent} and Figure~\ref{fig:q1a_class_scatter}.
+
+\subsection{Preprocessing (Q1c)}
+% TODO (you): describe the pipeline and justify each step (REPORT_TODO Q1c 1-7).
+
+\begin{table}[H]
+  \centering
+  \caption{Statistics stored in the fitted preprocessing pipeline compared with the statistics of the training split.}
+  \label{tab:q1c_learned}
+  \resizebox{\linewidth}{!}{\tablefile{q1c_learned_statistics}}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\linewidth]{q1c_scaling_sensitivity}
+  \caption{5-fold CV Macro-F1 on the training split with and without \texttt{StandardScaler}
+           (default hyperparameters, identical folds).}
+  \label{fig:q1c_scaling}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Preprocessing requirements per model family, determined empirically by fitting each model on raw
+           categorical strings and on one-hot data containing missing values; last column: Macro-F1 difference
+           (scaled $-$ unscaled) from Figure~\ref{fig:q1c_scaling}.}
+  \label{tab:q1c_requirements}
+  \resizebox{\linewidth}{!}{\tablefile{q1c_preprocessing_requirements}}
+\end{table}
+% TODO (you): interpret Table~\ref{tab:q1c_learned}, Figure~\ref{fig:q1c_scaling}, Table~\ref{tab:q1c_requirements}.
+
+\subsection{Leakage controls (Q1d)}
+% TODO (you): REPORT_TODO Q1d 1-7. Every INVALID result must be labelled "INVALID -- demonstration only".
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{q1d_leakage_cv_vs_val}
+  \caption{Leakage demonstration: 5-fold CV estimate on the training split vs.\ score on the held-out validation
+           split, for the valid pipeline and for procedures labelled \textbf{INVALID -- demonstration only}
+           (D1: feature selection with 200 noise columns, mean of 10 noise draws; D2: target-encoded
+           \texttt{customerID}; D3: imputation and scaling fitted on all training rows).
+           Dotted line: chance-level Macro-F1 for the class ratio.}
+  \label{fig:q1d_leakage}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Leakage demonstration, numerical summary. Rows marked INVALID are for demonstration only and are not
+           used anywhere else.}
+  \label{tab:q1d_leakage}
+  \resizebox{\linewidth}{!}{\tablefile{q1d_leakage_summary}}
+\end{table}
+% TODO (you): interpret Figure~\ref{fig:q1d_leakage} and Table~\ref{tab:q1d_leakage}.
 
 % =================================================================
 \section{Methods and experimental design}
@@ -64,7 +158,8 @@
 % Q1--Q5: models, pipelines, what is compared and why.
 % TODO (you)
 
-% Protocol diagram (Q1e) goes here (TikZ figure).
+% Protocol diagram (Q1e)
+\input{protocol_diagram}
 
 % =================================================================
 \section{Validation scheme, tuning grids, random seeds and computing environment}
@@ -86,7 +181,47 @@
 
 % TODO (you): describe the validation scheme (60/20/20, 5-fold StratifiedKFold
 % on train, Macro-F1 selection, seed 463, test set used once).
-% Tuning-grid table per model goes here.
+
+\subsection*{Stratified vs.\ random splitting (Q1b)}
+% TODO (you): REPORT_TODO Q1b 1-6.
+
+\begin{table}[H]
+  \centering
+  \caption{Absolute deviation (percentage points) of the churn rate of each part from the full-data churn rate,
+           over 200 seeds of the same 60/20/20 procedure. \texttt{share\_gt\_1pp}: fraction of seeds with a
+           deviation above 1 percentage point.}
+  \label{tab:q1b_deviation}
+  \small\tablefile{q1b_split_deviation_summary}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{q1b_split_deviation_boxplot}
+    \caption{Full data, 200 seeds.}
+    \label{fig:q1b_boxplot}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{q1b_deviation_vs_sample_size}
+    \caption{Random subsamples of size $n$.}
+    \label{fig:q1b_size}
+  \end{subfigure}
+  \caption{Class-ratio deviation of stratified and random splitting.}
+  \label{fig:q1b}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Churn rate inside the validation folds of 5-fold CV on the training split (200 seeds $\times$ 5 folds),
+           \texttt{StratifiedKFold} vs.\ \texttt{KFold}, for the full training split and for random subsamples of 30 rows.}
+  \label{tab:q1b_folds}
+  \resizebox{\linewidth}{!}{\tablefile{q1b_cv_fold_composition}}
+\end{table}
+% TODO (you): interpret Table~\ref{tab:q1b_deviation}, Figure~\ref{fig:q1b}, Table~\ref{tab:q1b_folds}.
+
+% Tuning-grid table per model goes here (Q2/Q4).
 
 \paragraph{Computing environment.}
 Windows 11 Home, Intel Core i7-13650HX (20 logical cores), 15.7\,GB RAM, no GPU.
@@ -107,6 +242,17 @@ imbalanced-learn 0.14.2, matplotlib 3.11.2, seaborn 0.13.2.
 % TODO (you)
 
 \subsection{Q1 -- Data preparation and leakage}
+% Main Q1 results are in Sections~\ref{sec:audit} and~\ref{sec:validation}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{q1a_churn_rate_by_category}
+  \caption{Churn rate per category level on the training split only ($n = 4{,}225$);
+           dashed line: overall training churn rate.}
+  \label{fig:q1a_churn_by_cat}
+\end{figure}
+% TODO (you): REPORT_TODO Q1a 7 (descriptive only, not causal).
+
 \subsection{Q2 -- Classification and error analysis}
 \subsection{Q3 -- Regression, regularization and generalization}
 \subsection{Q4 -- Decision trees, bagging and boosting}
@@ -117,6 +263,18 @@ imbalanced-learn 0.14.2, matplotlib 3.11.2, seaborn 0.13.2.
 \label{sec:error}
 % Q2e, Q3e, Q5b, Q5c.
 % TODO (you)
+
+\subsection*{Failure modes of the experimental design (Q1e)}
+% TODO (you): at least three failure modes (REPORT_TODO Q1e 3): what goes wrong, how it biases the results,
+% how it is detected/prevented in this project.
+
+\begin{table}[H]
+  \centering
+  \caption{Groups of customers with identical feature values (excluding \texttt{customerID}) that are shared
+           between splits.}
+  \label{tab:q1e_dup_splits}
+  \small\tablefile{q1e_duplicates_across_splits}
+\end{table}
 
 % =================================================================
 \section{Final model-selection rationale and test-set evaluation}

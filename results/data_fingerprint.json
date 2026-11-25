@@ -1,0 +1,7 @@
+{
+  "data/telco_churn.csv": "88be4b93fbe0cc83421af1c503794c97c342eca914c1576db7c276e61d61358a",
+  "data/california_housing.csv": "7192af0bf33e94141194cfd91958c62d66262dc40c07cc2e6fbe0b2d02b0e1b3",
+  "results/splits/clf_split_indices.csv": "2428c083cc13528390361b34134590e29fe9c9c345ae368166be3c951caa1340",
+  "results/splits/reg_split_indices.csv": "dcc8ffe9be3ac08325d88f565482671c175ada66a4f150e0e7d5ef01bfb2af8e",
+  "_created": "2026-11-25T18:51:56"
+}

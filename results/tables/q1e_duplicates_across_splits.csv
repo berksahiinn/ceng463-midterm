@@ -1,0 +1,4 @@
+pair,groups,rows_in_those_groups
+train & val,12,28
+train & test,11,28
+val & test,4,11
