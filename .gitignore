@@ -11,3 +11,5 @@ report/*.synctex.gz
 *.zip
 data/sklearn_cache/
 CALISMA_NOTLARI.md
+report/*.bbl
+report/*.blg

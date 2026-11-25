@@ -11,26 +11,26 @@
   ]
   % --- data and split
   \node[box=46mm, fill=gray!12] (raw)   at (0, 0)    {IBM Telco Customer Churn\\7{,}043 customers, 19 features};
-  \node[box=58mm]               (split) at (0, -1.6) {Stratified 60/20/20 split on \texttt{Churn}\\seed 463, indices saved once (notebook 00)};
+  \node[box=70mm]               (split) at (0, -1.6) {Stratified 60/20/20 split on \texttt{Churn}\\seed 463, indices saved once (notebook 00)};
 
   \node[split]  (train) at (-5.2, -3.4) {\textbf{Train}\\4{,}225 rows};
   \node[split]  (val)   at ( 0.0, -3.4) {\textbf{Validation}\\1{,}409 rows};
-  \node[locked] (test)  at ( 5.2, -3.4) {\textbf{Test}\\1{,}409 rows\\locked};
+  \node[locked] (test)  at ( 5.6, -3.4) {\textbf{Test}\\1{,}409 rows\\locked};
 
   % --- training side
-  \node[box=46mm] (cv) at (-5.2, -5.9)
+  \node[box=50mm] (cv) at (-5.2, -6.1)
     {5-fold \texttt{StratifiedKFold} (seed 463)\\\texttt{GridSearchCV}, metric Macro-F1\\[2pt]
      \footnotesize Pipeline re-fitted in every fold:\\\footnotesize impute $\rightarrow$ scale $\rightarrow$ one-hot $\rightarrow$ model};
-  \node[box=40mm] (refit) at (-5.2, -8.4) {Best configuration per model\\re-fitted on the full train split};
+  \node[box=46mm] (refit) at (-5.2, -9.0) {Best configuration per model,\\re-fitted on the full train split};
 
   % --- validation side
-  \node[box=46mm] (compare) at (0, -8.4)
-    {Model comparison on validation\\error analysis, robustness,\\paired bootstrap (Q2--Q5)};
-  \node[box=46mm, fill=yellow!15] (freeze) at (0, -10.7)
-    {Freeze configurations + selection rule\\\texttt{frozen\_configs.json}, models saved};
+  \node[box=50mm] (compare) at (0.4, -9.0)
+    {Model comparison on validation:\\error analysis, robustness,\\paired bootstrap (Q2--Q5)};
+  \node[box=54mm, fill=yellow!15] (freeze) at (0.4, -11.4)
+    {Freeze configurations and selection rule\\(\texttt{frozen\_configs.json}), save models};
 
   % --- final test
-  \node[locked] (final) at (5.2, -10.7) {Single evaluation\\on test (Q5e)};
+  \node[locked] (final) at (5.6, -11.4) {Single evaluation\\on test (Q5e)};
 
   % --- arrows
   \draw[arr] (raw) -- (split);
